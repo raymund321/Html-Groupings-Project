@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+        
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <h1>Flight Booking</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Book a Flight</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="confirmation-section">
+            <h2>Thank You for Booking!</h2>
+            <p>Your flight has been successfully booked. Here are your ticket details:</p>
+
+            <div class="ticket-details">
+                <p><strong>Departure:</strong> <span id="departureDetails"></span></p>
+                <p><strong>Destination:</strong> <span id="destinationDetails"></span></p>
+                <p><strong>Date:</strong> <span id="dateDetails"></span></p>
+                <p><strong>Passengers:</strong> <span id="passengerDetails"></span></p>
+            </div>
+
+            <p>We wish you a safe and pleasant journey!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Flight Booking. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the URL parameters and display them
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('departureDetails').textContent = urlParams.get('departure');
+        document.getElementById('destinationDetails').textContent = urlParams.get('destination');
+        document.getElementById('dateDetails').textContent = urlParams.get('date');
+        document.getElementById('passengerDetails').textContent = urlParams.get('passengers');
+    </script>
+</body>
+</html>
